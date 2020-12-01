@@ -11,13 +11,15 @@ inquirer
       type: 'file-tree-selection',
       name: 'file',
       message: 'choose a file',
-      transformer: (input) => {
-        const name = input.split(path.sep).pop();
-        if (name[0] == '.') {
-          return chalk.grey(name);
+      pageSize: 5,
+      onValid: (item) => {
+        const name = item.split(path.sep).pop();
+        if (name[0] != '.') {
+          return 'please select another file';
         }
-        return name;
+        return true;
       },
+      // onlyShowValid: true,
     },
   ])
   .then((answers) => {
