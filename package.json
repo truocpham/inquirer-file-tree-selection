@@ -1,11 +1,11 @@
 {
   "name": "inquirer-file-tree-selection-prompt",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "repository": "https://github.com/truocpham/inquirer-file-tree-selection",
   "description": "inquirer file tree selection prompt",
   "main": "index.js",
   "scripts": {
-    "changelog": "auto-changelog",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md",
     "postpublish": "git push origin --all; git push origin --tags",
     "prepublish": "npm run changelog"
   },
